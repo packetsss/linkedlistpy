@@ -191,16 +191,6 @@ def test_circular_linked_list():
     assert another_cll.head.data == another_cll.tail.next.data
 
 
-circular_doubly_linked_list = CircularDoublyLinkedList()
-circular_doubly_linked_list.append(linked_list_data)
-print(circular_doubly_linked_list)
-circular_doubly_linked_list.delete("e")
-circular_doubly_linked_list.delete(124)
-circular_doubly_linked_list.delete(3)
-circular_doubly_linked_list.delete(tuple)
-print(circular_doubly_linked_list)
-
-
 def test_circular_doubly_linked_list():
     # general test
     circular_doubly_linked_list = CircularDoublyLinkedList()
