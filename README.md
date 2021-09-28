@@ -4,7 +4,7 @@
 ![Tests](https://github.com/packetsss/pylinkedlist/actions/workflows/tests.yml/badge.svg)
 
 
-## Install package
+## Installation
 ```
 pip install linkedlistpy
 ```
