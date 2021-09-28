@@ -17,7 +17,7 @@ def test_one_is_two():
 
 
 # mark test passed
-# @pytest.mark.xfail
+@pytest.mark.xfail
 def test_divide_by_zero():
     assert 1 / 0 == 1
 
