@@ -13,12 +13,16 @@ pip install linkedlistpy
 ```
 from linkedlistpy import LinkedList
 
+linked_list = LinkedList()
+
 linked_list.append(1)
 linked_list.append_left([3, "foo", tuple, true])
+
 print(linked_list)
 >> [3, "foo", tuple, true, 1]
 
 linked_list.reverse()
+
 print(linked_list)
 >> [1, true, tuple, "foo", 3]
 ```
