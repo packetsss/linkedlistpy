@@ -1,1 +1,1 @@
-from .linkedlist import CircularLinkedList
+from .linkedlist import *
