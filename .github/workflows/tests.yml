@@ -2,8 +2,11 @@ name: Tests
 
 # every time to run
 on:
-  - push
-  - pull_request
+  push:
+      branches:
+      - main
+      paths-ignore:
+      - '**/README.md'
   
 # job is to run tests
 jobs:
