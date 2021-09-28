@@ -35,7 +35,7 @@ print(linked_list)
 
 ### Linked Lists
 - Singly Linked list
-- Doubly Linked list (TODO)
+- Doubly Linked list
 - Circular Linked list
 - Doubly Circular Linked list (TODO)
 
