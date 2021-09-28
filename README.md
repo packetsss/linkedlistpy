@@ -46,5 +46,6 @@ print(linked_list)
   - len
 - append
 - append_left
+- insert
 - delete
 - reverse
