@@ -1,7 +1,7 @@
 # pylinkedlist - a Linked List library
 **This library provides linked lists so that you won't have to build your own! (especially for evil interviews)**
 
-![Tests](https://github.com/packetsss/pylinkedlist/actions/workflows/tests.yml/badge.svg)
+![tests](https://github.com/packetsss/pylinkedlist/actions/workflows/tests.yml/badge.svg) ![pypi](https://shields.io/pypi/v/linkedlistpy)
 
 
 ## Installation
