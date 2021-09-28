@@ -23,7 +23,7 @@ print(linked_list)
 print(len(linked_list))
 >> 5
 
-print(str(linked_list), type(str(linked_list)))
+print(list(linked_list), type(str(linked_list)))
 >> [3, 'foo', <class 'tuple'>, True, 1] <class 'str'>
 
 linked_list.reverse()
