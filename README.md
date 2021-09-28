@@ -16,15 +16,28 @@ from linkedlistpy import LinkedList
 linked_list = LinkedList()
 
 linked_list.append(1)
-linked_list.append_left([3, "foo", tuple, true])
-
+linked_list.append_left([3, "foo", tuple, True])
 print(linked_list)
->> [3, "foo", tuple, true, 1]
+>> [3, 'foo', <class 'tuple'>, True, 1]
+
+print(len(linked_list))
+>> 5
+
+print(str(linked_list), type(str(linked_list)))
+>> [3, 'foo', <class 'tuple'>, True, 1] <class 'str'>
 
 linked_list.reverse()
-
 print(linked_list)
->> [1, true, tuple, "foo", 3]
+>> [1, True, <class 'tuple'>, 'foo', 3]
+
+linked_list.insert(3, "bar")
+print(linked_list)
+>> [1, True, <class 'tuple'>, 'bar', 'foo', 3]
+
+linked_list.delete(tuple)
+print(linked_list)
+>> [1, True, 'bar', 'foo', 3]
+
 ```
 
 
