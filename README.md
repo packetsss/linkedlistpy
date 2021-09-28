@@ -1,5 +1,5 @@
 # pylinkedlist - a Linked List library
-**This library provides linked lists so that you won't have to build your own! (especially for those evil interviews)**
+**This library provides all types of linked lists so that you won't have to implement your own! (especially for those evil interviews)**
 
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/packetsss/linkedlistpy/Tests?style=for-the-badge)](https://github.com/packetsss/linkedlistpy/actions) [![pypi](https://shields.io/pypi/v/linkedlistpy?style=for-the-badge)](https://pypi.org/project/linkedlistpy/) [![GitHub stars](https://img.shields.io/github/stars/packetsss/linkedlistpy?style=for-the-badge)](https://github.com/packetsss/linkedlistpy/stargazers)
 
@@ -26,9 +26,6 @@ linked_list.reverse()
 print(linked_list)
 >> [1, true, tuple, "foo", 3]
 ```
-
-
-
 
 
 ## Features included (for now)
