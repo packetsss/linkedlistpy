@@ -1,6 +1,6 @@
 import math
 import pytest
-from pylinkedlist.math import sqrt, remainder, root
+from linkedlistpy.math import sqrt, remainder, root
 
 
 # test fixtures for fun

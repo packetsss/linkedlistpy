@@ -1,5 +1,5 @@
 import pytest
-from pylinkedlist import LinkedList, CircularLinkedList
+from linkedlistpy import LinkedList, CircularLinkedList
 
 linked_list_data = [3, 23.234, -21.3, "e", False, tuple]
 
