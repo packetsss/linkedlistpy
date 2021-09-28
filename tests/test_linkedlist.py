@@ -3,6 +3,7 @@ import pytest
 from pylinkedlist import CircularLinkedList
 from pylinkedlist.math import sqrt, remainder, root
 
+
 # test fixtures for fun
 def test_print(capture_stdout):
     print("hello, world")
@@ -82,7 +83,7 @@ def test_circular_linked_list():
     assert str(circular_linked_list) == test_data.__str__()
 
     another_cll = CircularLinkedList()
-    assert another_cll.head.data == None
+    assert another_cll.head.data is None
     assert list(another_cll) == []
 
     another_cll.add("1")
@@ -90,5 +91,8 @@ def test_circular_linked_list():
     assert another_cll.head.data == "1"
 
 
+"""
 if __name__ == "__main__":
     pytest.main()
+
+"""
