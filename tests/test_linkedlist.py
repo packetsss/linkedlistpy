@@ -13,13 +13,20 @@ def test_linked_list():
     assert list(linked_list) == linked_list_data
     assert str(linked_list) == linked_list_data.__str__()
     assert len(linked_list) == len(linked_list_data)
+    
+    # test insert
+    linked_list.insert(2, 4)
+    linked_list.insert(0, "23")
+    linked_list.insert(-1, True)
+    assert list(linked_list) == ['23', 3, 23.234, 4, -21.3, 'e', False, tuple, True]
+    assert len(linked_list) == 9
 
     # test delete
     linked_list.delete(3)
     linked_list.delete(tuple)
     linked_list.delete(1212)
-    assert list(linked_list) == linked_list_data[1:-1]
-    assert len(linked_list) == len(linked_list_data) - 2
+    assert list(linked_list) == ['23', 23.234, 4, -21.3, 'e', False, True]
+    assert len(linked_list) == len(linked_list_data) + 1
 
     # test empty
     another_ll = LinkedList()
@@ -40,12 +47,14 @@ def test_linked_list():
     assert list(another_ll) == [8.7, 2, 3, 3, 1.2, -8.8]
 
 
-another_cll = CircularLinkedList()
-another_cll.append([1, 4, 7])
-another_cll.append_left([12, 44, 0])
-print(another_cll)
-another_cll.reverse()
-print(another_cll)
+# another_cll = CircularLinkedList()
+# another_cll.append([7, 4, 1, 0, 44, 12])
+# print(another_cll)
+# another_cll.insert(2, 4)
+# another_cll.insert(0, "23")
+# another_cll.insert(-1, True)
+# print(another_cll)
+# print(another_cll.head.data, another_cll.tail.next.data)
 
 
 def test_circular_linked_list():
@@ -85,15 +94,22 @@ def test_circular_linked_list():
     assert list(another_cll) == [12, 44, 0, 1, 4, 7]
     assert len(another_cll) == 6
 
-    # test_reverse
+    # testreverse
     another_cll.reverse()
     assert list(another_cll) == [7, 4, 1, 0, 44, 12]
     assert another_cll.tail.data == 12
     assert another_cll.tail.next == another_cll.head
+    
+    # test insert
+    another_cll.insert(2, 4)
+    another_cll.insert(0, "23")
+    another_cll.insert(-1, True)
+    assert list(another_cll) == ['23', 7, 4, 4, 1, 0, 44, 12, True]
+    assert another_cll.head.data == another_cll.tail.next.data
+
 
 
 """
 if __name__ == "__main__":
     pytest.main()
-
 """

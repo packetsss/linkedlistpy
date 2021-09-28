@@ -12,19 +12,19 @@ class LinkedList:
     def __init__(self) -> None:
         self.head = Node(None)
         self._length = 0
-    
+
     def __len__(self) -> int:
         return self._length
-        
+
     def __iter__(self) -> Iterable[Any]:
-        current = self.head
-        if current.data is None:
+        curr = self.head
+        if curr.data is None:
             return iter([])
 
         output_list = []
-        while current:
-            output_list.append(current.data)
-            current = current.next
+        while curr:
+            output_list.append(curr.data)
+            curr = curr.next
 
         return iter(output_list)
 
@@ -32,7 +32,7 @@ class LinkedList:
         return list(self.__iter__()).__repr__()
 
     def append(self, data: Any) -> None:
-        if not isinstance(data, Iterable):
+        if not isinstance(data, Iterable) or isinstance(data, str):
             data = [data]
         for d in data:
             new_node = Node(d)
@@ -44,10 +44,9 @@ class LinkedList:
             while curr_node.next is not None:
                 curr_node = curr_node.next
             curr_node.next = new_node
-            
 
     def append_left(self, data: Any) -> None:
-        if not isinstance(data, Iterable):
+        if not isinstance(data, Iterable) or isinstance(data, str):
             data = [data]
 
         data = reversed(data)
@@ -57,21 +56,31 @@ class LinkedList:
             self.head = new_node
             self._length += 1
 
+    def insert(self, index: int, value: Any) -> None:
+        index = max(-self._length, min(index, self._length))
+        if index == 0:
+            self.append_left(value)
+            return
+        elif index < 0:
+            index = self._length + index + 1
+
+        curr = self.head
+        new_node = Node(value)
+        for _ in range(index - 1):
+            curr = curr.next
+        new_node.next = curr.next
+        curr.next = new_node
+        self._length += 1
+
     def delete(self, value: Any) -> None:
         temp = self.head
 
-        if temp.data is not None:
-            if temp.data == value:
-                self.head = temp.next
-                temp = None
-                self._length -= 1
-                return
         while temp is not None:
             if temp.data == value:
                 break
             prev = temp
             temp = temp.next
-        if temp == None:
+        if temp is None:
             return
 
         prev.next = temp.next
@@ -80,12 +89,12 @@ class LinkedList:
 
     def reverse(self) -> None:
         prev = None
-        current = self.head
-        while current is not None:
-            next = current.next
-            current.next = prev
-            prev = current
-            current = next
+        curr = self.head
+        while curr is not None:
+            next = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next
         self.head = prev
 
 
@@ -99,22 +108,22 @@ class CircularLinkedList:
 
     def __len__(self) -> int:
         return self._length
-    
+
     def __iter__(self) -> Iterable[Any]:
-        current = self.head
-        if current.data is None:
+        curr = self.head
+        if curr.data is None:
             return iter([])
-        output_list = [current.data]
-        while current.next is not None and current.next != self.head:
-            current = current.next
-            output_list.append(current.data)
+        output_list = [curr.data]
+        while curr.next is not None and curr.next != self.head:
+            curr = curr.next
+            output_list.append(curr.data)
         return iter(output_list)
 
     def __repr__(self) -> str:
         return list(self.__iter__()).__repr__()
 
     def append(self, data: Any) -> None:
-        if not isinstance(data, Iterable):
+        if not isinstance(data, Iterable) or isinstance(data, str):
             data = [data]
         for d in data:
             new_node = Node(d)
@@ -129,7 +138,7 @@ class CircularLinkedList:
             self._length += 1
 
     def append_left(self, data: Any) -> None:
-        if not isinstance(data, Iterable):
+        if not isinstance(data, Iterable) or isinstance(data, str):
             data = [data]
 
         data = reversed(data)
@@ -145,27 +154,45 @@ class CircularLinkedList:
                 self.tail.next = self.head
             self._length += 1
 
+    def insert(self, index: int, value: Any) -> None:
+        index = max(-self._length, min(index, self._length))
+        if index == 0:
+            self.append_left(value)
+            return
+        elif index < 0:
+            index = self._length + index + 1
+        if index >= self._length:
+            self.append(value)
+            return
+
+        curr = self.head
+        new_node = Node(value)
+        for _ in range(index - 1):
+            curr = curr.next
+        new_node.next = curr.next
+        curr.next = new_node
+        self._length += 1
+
     def delete(self, value: Any) -> None:
-        current = self.head
+        curr = self.head
         prev = None
         while True:
             # found
-            if current.data == value:
+            if curr.data == value:
                 if prev is not None:
-                    prev.next = current.next
+                    prev.next = curr.next
                 else:
-                    while current.next != self.head:
-                        current = current.next
-                    current.next = self.head.next
+                    while curr.next != self.head:
+                        curr = curr.next
+                    curr.next = self.head.next
                     self.head = self.head.next
                 self._length -= 1
                 return
             # not found
-            elif current.next == self.head:
+            elif curr.next == self.head:
                 return
-            prev = current
-            current = current.next
-
+            prev = curr
+            curr = curr.next
 
     def reverse(self) -> None:
         head_ref = self.head
@@ -173,16 +200,16 @@ class CircularLinkedList:
             return
 
         prev = None
-        current = head_ref
-        next = current.next
-        current.next = prev
-        prev = current
-        current = next
-        while current != head_ref:
-            next = current.next
-            current.next = prev
-            prev = current
-            current = next
+        curr = head_ref
+        next = curr.next
+        curr.next = prev
+        prev = curr
+        curr = next
+        while curr != head_ref:
+            next = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next
 
         self.head.next = prev
         self.head = prev

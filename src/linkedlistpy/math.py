@@ -14,5 +14,3 @@ def remainder(x: float, divisor: float) -> float:
 
 def root(x: float, root: float) -> float:
     return x ** (1 / root)
-
-
