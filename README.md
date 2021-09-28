@@ -28,12 +28,14 @@ print(linked_list)
 
 
 ## Features included (for now)
+
+### Linked Lists
 - Singly Linked list
 - Doubly Linked list (TODO)
 - Circular Linked list
 - Doubly Circular Linked list (TODO)
 
-
+### Methods
 - built-in
   - str
   - list
