@@ -1,7 +1,7 @@
 # pylinkedlist - a Linked List library
 **This library provides linked lists so that you won't have to build your own! (especially for evil interviews)**
 
-![tests](https://github.com/packetsss/pylinkedlist/actions/workflows/tests.yml/badge.svg) ![pypi](https://shields.io/pypi/v/linkedlistpy)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fpacketsss%2Flinkedlistpy%2Fbadge%3Fref%3Dmain&style=for-the-badge)](https://actions-badge.atrox.dev/packetsss/linkedlistpy/goto?ref=main) ![pypi](https://shields.io/pypi/v/linkedlistpy?style=for-the-badge) [![GitHub stars](https://img.shields.io/github/stars/packetsss/linkedlistpy?style=for-the-badge)](https://github.com/packetsss/linkedlistpy/stargazers)
 
 
 ## Installation
