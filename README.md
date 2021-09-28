@@ -1,5 +1,5 @@
 # pylinkedlist - a Linked List library
-**This library provides linked lists so that you won't have to build your own! (especially for evil interviews)**
+**This library provides linked lists so that you won't have to build your own! (especially for those evil interviews)**
 
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/packetsss/linkedlistpy/Tests?style=for-the-badge) ![pypi](https://shields.io/pypi/v/linkedlistpy?style=for-the-badge) [![GitHub stars](https://img.shields.io/github/stars/packetsss/linkedlistpy?style=for-the-badge)](https://github.com/packetsss/linkedlistpy/stargazers)
 
