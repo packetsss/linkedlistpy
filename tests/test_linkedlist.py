@@ -33,30 +33,30 @@ def test_linked_list():
     assert len(linked_list) == len(linked_list_data) + 1
 
     # test empty
-    another_ll = LinkedList()
-    assert another_ll.head.data is None
-    assert list(another_ll) == []
+    linked_list_3 = LinkedList()
+    assert linked_list_3.head.data is None
+    assert list(linked_list_3) == []
 
     # test edge case
-    a = LinkedList()
-    a.append_left(1)
-    assert a.head.data == 1
-    a.delete(1)
-    a.delete(1)
-    assert a.head.data == None
+    linked_list_2 = LinkedList()
+    linked_list_2.append_left(1)
+    assert linked_list_2.head.data == 1
+    linked_list_2.delete(1)
+    linked_list_2.delete(1)
+    assert linked_list_2.head.data == None
 
     # test append
-    another_ll.append(3)
-    another_ll.append(2)
-    another_ll.append(8.7)
-    another_ll.append_left([1.2, 3])
-    another_ll.append_left(-8.8)
-    assert another_ll.head.data == -8.8
-    assert len(another_ll) == 6
+    linked_list_3.append(3)
+    linked_list_3.append(2)
+    linked_list_3.append(8.7)
+    linked_list_3.append_left([1.2, 3])
+    linked_list_3.append_left(-8.8)
+    assert linked_list_3.head.data == -8.8
+    assert len(linked_list_3) == 6
 
     # test_reverse
-    another_ll.reverse()
-    assert list(another_ll) == [8.7, 2, 3, 3, 1.2, -8.8]
+    linked_list_3.reverse()
+    assert list(linked_list_3) == [8.7, 2, 3, 3, 1.2, -8.8]
 
 
 def test_doubly_linked_list():
@@ -100,34 +100,34 @@ def test_doubly_linked_list():
     assert doubly_linked_list.head.next.data == 4
 
     # test empty
-    another_dll = DoublyLinkedList()
-    another_dll.delete(3)
-    assert another_dll.head.data is None
-    assert list(another_dll) == []
+    doubly_linked_list_3 = DoublyLinkedList()
+    doubly_linked_list_3.delete(3)
+    assert doubly_linked_list_3.head.data is None
+    assert list(doubly_linked_list_3) == []
 
     # test edge case
-    a = DoublyLinkedList()
-    a.append_left(1)
-    assert a.head.data == a.tail.data == 1
-    a.delete(1)
-    a.delete(1)
-    assert a.head.data == a.tail.data == None
+    doubly_linked_list_2 = DoublyLinkedList()
+    doubly_linked_list_2.append_left(1)
+    assert doubly_linked_list_2.head.data == doubly_linked_list_2.tail.data == 1
+    doubly_linked_list_2.delete(1)
+    doubly_linked_list_2.delete(1)
+    assert doubly_linked_list_2.head.data == doubly_linked_list_2.tail.data == None
 
     # test append
-    another_dll.append(1)
-    another_dll.append([4, 7])
-    another_dll.append_left([44, 0])
-    another_dll.append_left(12)
-    assert another_dll.head.data == 12
-    assert another_dll.tail.prev.data == 4
-    assert list(another_dll) == [12, 44, 0, 1, 4, 7]
-    assert len(another_dll) == 6
+    doubly_linked_list_3.append(1)
+    doubly_linked_list_3.append([4, 7])
+    doubly_linked_list_3.append_left([44, 0])
+    doubly_linked_list_3.append_left(12)
+    assert doubly_linked_list_3.head.data == 12
+    assert doubly_linked_list_3.tail.prev.data == 4
+    assert list(doubly_linked_list_3) == [12, 44, 0, 1, 4, 7]
+    assert len(doubly_linked_list_3) == 6
 
     # test reverse
-    another_dll.reverse()
-    assert list(another_dll) == [7, 4, 1, 0, 44, 12]
-    assert another_dll.tail.prev.data == 44
-    assert another_dll.head.next.data == 4
+    doubly_linked_list_3.reverse()
+    assert list(doubly_linked_list_3) == [7, 4, 1, 0, 44, 12]
+    assert doubly_linked_list_3.tail.prev.data == 44
+    assert doubly_linked_list_3.head.next.data == 4
 
 
 def test_circular_linked_list():
@@ -152,43 +152,43 @@ def test_circular_linked_list():
     assert circular_linked_list.tail.next == circular_linked_list.head
 
     # test empty
-    another_cll = CircularLinkedList()
-    another_cll.reverse()
-    assert another_cll.head.data is None
-    assert list(another_cll) == []
+    circular_linked_list_3 = CircularLinkedList()
+    circular_linked_list_3.reverse()
+    assert circular_linked_list_3.head.data is None
+    assert list(circular_linked_list_3) == []
 
     # test edge case
-    a = CircularLinkedList()
-    a.append_left(1)
-    assert a.head.data == 1
-    a.delete(1)
-    a.delete(1)
-    assert a.head.data == a.tail.data == None
-    a.insert(1142, 2)
-    assert a.head.data == 2
+    circular_linked_list_2 = CircularLinkedList()
+    circular_linked_list_2.append_left(1)
+    assert circular_linked_list_2.head.data == 1
+    circular_linked_list_2.delete(1)
+    circular_linked_list_2.delete(1)
+    assert circular_linked_list_2.head.data == circular_linked_list_2.tail.data == None
+    circular_linked_list_2.insert(1142, 2)
+    assert circular_linked_list_2.head.data == 2
 
     # test append
-    another_cll.append(1)
-    another_cll.append([4, 7])
-    another_cll.append_left([44, 0])
-    another_cll.append_left(12)
-    assert another_cll.head.data == 12
-    assert another_cll.tail.next.data == 12
-    assert list(another_cll) == [12, 44, 0, 1, 4, 7]
-    assert len(another_cll) == 6
+    circular_linked_list_3.append(1)
+    circular_linked_list_3.append([4, 7])
+    circular_linked_list_3.append_left([44, 0])
+    circular_linked_list_3.append_left(12)
+    assert circular_linked_list_3.head.data == 12
+    assert circular_linked_list_3.tail.next.data == 12
+    assert list(circular_linked_list_3) == [12, 44, 0, 1, 4, 7]
+    assert len(circular_linked_list_3) == 6
 
     # test reverse
-    another_cll.reverse()
-    assert list(another_cll) == [7, 4, 1, 0, 44, 12]
-    assert another_cll.tail.data == 12
-    assert another_cll.tail.next == another_cll.head
+    circular_linked_list_3.reverse()
+    assert list(circular_linked_list_3) == [7, 4, 1, 0, 44, 12]
+    assert circular_linked_list_3.tail.data == 12
+    assert circular_linked_list_3.tail.next == circular_linked_list_3.head
 
     # test insert
-    another_cll.insert(2, 4)
-    another_cll.insert(0, "23")
-    another_cll.insert(-1, True)
-    assert list(another_cll) == ["23", 7, 4, 4, 1, 0, 44, 12, True]
-    assert another_cll.head.data == another_cll.tail.next.data
+    circular_linked_list_3.insert(2, 4)
+    circular_linked_list_3.insert(0, "23")
+    circular_linked_list_3.insert(-1, True)
+    assert list(circular_linked_list_3) == ["23", 7, 4, 4, 1, 0, 44, 12, True]
+    assert circular_linked_list_3.head.data == circular_linked_list_3.tail.next.data
 
 
 def test_circular_doubly_linked_list():
@@ -217,51 +217,51 @@ def test_circular_doubly_linked_list():
     )
 
     # test empty
-    another_cdll = CircularDoublyLinkedList()
-    another_cdll.reverse()
-    assert another_cdll.head.data is None
-    assert list(another_cdll) == []
+    circular_doubly_linked_list_3 = CircularDoublyLinkedList()
+    circular_doubly_linked_list_3.reverse()
+    assert circular_doubly_linked_list_3.head.data is None
+    assert list(circular_doubly_linked_list_3) == []
 
     # test edge case
-    a = CircularDoublyLinkedList()
-    a.append_left(1)
-    assert a.head.data == a.tail.data == 1
-    a.delete(1)
-    a.delete(1)
-    assert a.head.data == a.tail.data == None
-    a.insert(1142, 2)
-    assert a.head.data == 2
+    circular_doubly_linked_list_2 = CircularDoublyLinkedList()
+    circular_doubly_linked_list_2.append_left(1)
+    assert circular_doubly_linked_list_2.head.data == circular_doubly_linked_list_2.tail.data == 1
+    circular_doubly_linked_list_2.delete(1)
+    circular_doubly_linked_list_2.delete(1)
+    assert circular_doubly_linked_list_2.head.data == circular_doubly_linked_list_2.tail.data == None
+    circular_doubly_linked_list_2.insert(1142, 2)
+    assert circular_doubly_linked_list_2.head.data == 2
 
     # test append
-    another_cdll.append(1)
-    another_cdll.append([4, 7])
-    another_cdll.append_left([44, 0])
-    another_cdll.append_left(12)
-    assert another_cdll.head.data == 12
-    assert another_cdll.tail.next.data == 12
+    circular_doubly_linked_list_3.append(1)
+    circular_doubly_linked_list_3.append([4, 7])
+    circular_doubly_linked_list_3.append_left([44, 0])
+    circular_doubly_linked_list_3.append_left(12)
+    assert circular_doubly_linked_list_3.head.data == 12
+    assert circular_doubly_linked_list_3.tail.next.data == 12
     assert (
         circular_doubly_linked_list.head.prev.prev.data
         == circular_doubly_linked_list.tail.prev.data
     )
-    assert list(another_cdll) == [12, 44, 0, 1, 4, 7]
-    assert len(another_cdll) == 6
+    assert list(circular_doubly_linked_list_3) == [12, 44, 0, 1, 4, 7]
+    assert len(circular_doubly_linked_list_3) == 6
 
     # test reverse
-    another_cdll.reverse()
-    assert list(another_cdll) == [7, 4, 1, 0, 44, 12]
-    assert another_cdll.tail.data == 12
-    assert another_cdll.tail.next == another_cdll.head
+    circular_doubly_linked_list_3.reverse()
+    assert list(circular_doubly_linked_list_3) == [7, 4, 1, 0, 44, 12]
+    assert circular_doubly_linked_list_3.tail.data == 12
+    assert circular_doubly_linked_list_3.tail.next == circular_doubly_linked_list_3.head
     assert (
         circular_doubly_linked_list.head.prev.prev.data
         == circular_doubly_linked_list.tail.prev.data
     )
 
     # test insert
-    another_cdll.insert(2, 4)
-    another_cdll.insert(0, "23")
-    another_cdll.insert(-1, True)
-    assert list(another_cdll) == ["23", 7, 4, 4, 1, 0, 44, 12, True]
-    assert another_cdll.head.data == another_cdll.tail.next.data
+    circular_doubly_linked_list_3.insert(2, 4)
+    circular_doubly_linked_list_3.insert(0, "23")
+    circular_doubly_linked_list_3.insert(-1, True)
+    assert list(circular_doubly_linked_list_3) == ["23", 7, 4, 4, 1, 0, 44, 12, True]
+    assert circular_doubly_linked_list_3.head.data == circular_doubly_linked_list_3.tail.next.data
     assert (
         circular_doubly_linked_list.head.prev.prev.data
         == circular_doubly_linked_list.tail.prev.data
